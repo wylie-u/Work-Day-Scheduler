@@ -70,7 +70,13 @@ textarea{
   transition: all .3s ease-in-out;
 }
 
-.progress-container {
+.far{
+  position: relative;
+  left:20px;
+  top: 30px;
+}
+
+/* .progress-container {
   direction: ltr;
   width: 100%;
   height: 8px;
@@ -82,4 +88,4 @@ textarea{
   height: 8px;
   background: #4caf50;
   width: 0%;
-}
+} */

@@ -1,13 +1,8 @@
-const now = moment().format('MMMM Do YYYY');
+//current day 
+var currentDay = moment().format('MMMM Do YYYY');
+console.log(currentDay);
+$("#currentDay").text(currentDay);
 
-$("#currentDay")
-
-newTime = $("<p>")
-
-newTime.text("");
-
-$("currentDay").append(newTime)
-console.log('test');
 
 // GIVEN I am using a daily planner to create a schedule
 // WHEN I open the planner
@@ -29,3 +24,4 @@ console.log('test');
 // $(document).ready(function() {
 
 // }
+
