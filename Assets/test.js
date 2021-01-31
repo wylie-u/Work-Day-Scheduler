@@ -7,23 +7,42 @@ var saveButton = $(".saveBtn");
 $(document).ready(function () {
 
 function trial (){
-    var currentTime = moment().format("hh")
-    console.log(currentTime);
+    var currentTime = moment().hour();
+    
   $("textarea").each(function () {
-      console.log('test');
+      
       
     var timeSlot = parseInt($(this).attr("id"));
     
-    if (currentTime === timeSlot) {
-        $(this).addClass("present");
+    
+    // read as 24 hr clock, google 
+    // only want to add 12 to timeslots greater than twelve 
+    // need to get current hour to read in same format as moment 
+
+    if (timeSlot < 8 ) {
+      timeSlot = timeSlot + 12
+    }
+    // timeslots need to match up with currentTime???
+    
+    if (currentTime < timeSlot) {
+      console.log(timeSlot);
+      $(this).removeClass('present');
+      $(this).removeClass('past');
+      $(this).addClass("future")
         
       }
-      else if (currentTime < timeSlot){
+      else if (currentTime > timeSlot){
+                $(this).removeClass('present');
+                $(this).removeClass('future');
                 $(this).addClass("past");
             }
         else {
-                $(this).addClass("future")
+              
+            $(this).removeClass('future');
+            $(this).removeClass('past');
+            $(this).addClass("present");
             }
+
         
         
   });
